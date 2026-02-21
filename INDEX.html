@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELECTRIC Soluciones A.B - Brochure</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #1a1a2e;
+            color: #ffffff;
+        }
+        
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+            padding: 40px;
+        }
+        
+        .page:last-child { page-break-after: auto; }
+        
+        /* ===== ESTILOS DE IMÁGENES ===== */
+        .img-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 2px solid #00d4ff;
+        }
+        
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .img-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(26, 26, 46, 0.95));
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .img-logo-overlay {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 80px;
+            height: 80px;
+            background: rgba(26, 26, 46, 0.9);
+            border-radius: 10px;
+            padding: 10px;
+            border: 2px solid #00d4ff;
+        }
+        
+        .img-logo-overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        /* ===== PORTADA ===== */
+        .portada {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #16213e 100%);
+        }
+        
+        .logo-container { margin-bottom: 30px; }
+        
+        .logo-electric {
+            font-size: 72px;
+            font-weight: 900;
+            color: #00d4ff;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            letter-spacing: 8px;
+        }
+        
+        .logo-soluciones {
+            font-size: 28px;
+            font-weight: 300;
+            color: #ffffff;
+            letter-spacing: 12px;
+            margin-top: 10px;
+        }
+        
+        .logo-ab {
+            font-size: 20px;
+            font-weight: 600;
+            color: #00d4ff;
+            margin-top: 5px;
+        }
+        
+        .rayo-icon {
+            font-size: 80px;
+            color: #00d4ff;
+            margin: 20px 0;
+        }
+        
+        .slogan {
+            font-size: 22px;
+            font-weight: 300;
+            font-style: italic;
+            color: #a0a0a0;
+            margin: 20px 0;
+        }
+        
+        .portada-img {
+            width: 85%;
+            height: 280px;
+            position: relative;
+            margin: 25px 0;
+        }
+        
+        .tagline {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-top: 15px;
+        }
+        
+        .subtagline {
+            font-size: 16px;
+            color: #00d4ff;
+            margin-top: 8px;
+        }
+        
+        /* ===== SECCIONES ===== */
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #00d4ff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-title::before {
+            content: "⚡";
+            font-size: 36px;
+        }
+        
+        /* ===== CARDS CON IMÁGENES ===== */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 140px;
+            position: relative;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 8px;
+        }
+        
+        .card-text {
+            font-size: 13px;
+            color: #c0c0c0;
+            line-height: 1.5;
+        }
+        
+        .highlight { color: #00d4ff; font-weight: 700; }
+        
+        /* ===== SERVICIOS ===== */
+        .servicio-box {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 4px solid #00d4ff;
+            border-radius: 0 15px 15px 0;
+            overflow: hidden;
+            margin-bottom: 18px;
+        }
+        
+        .servicio-img {
+            width: 100%;
+            height: 160px;
+            position: relative;
+        }
+        
+        .servicio-content {
+            padding: 18px;
+        }
+        
+        .servicio-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .servicio-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        
+        .servicio-list li {
+            padding-left: 20px;
+            position: relative;
+            color: #c0c0c0;
+            font-size: 13px;
+        }
+        
+        .servicio-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+        
+        /* ===== TECNOLOGÍAS ===== */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .tech-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(26, 26, 46, 0.8));
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .tech-img {
+            width: 100%;
+            height: 130px;
+            position: relative;
+        }
+        
+        .tech-body {
+            padding: 18px;
+            text-align: center;
+        }
+        
+        .tech-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .tech-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 8px;
+        }
+        
+        .tech-desc {
+            font-size: 12px;
+            color: #a0a0a0;
+            line-height: 1.5;
+        }
+        
+        /* ===== CLIENTES ===== */
+        .clientes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .cliente-box {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .cliente-logo {
+            width: 70px;
+            height: 70px;
+            background: #ffffff;
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 10px;
+        }
+        
+        .cliente-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .cliente-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+        
+        .testimonial {
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 25px;
+            text-align: center;
+            font-style: italic;
+            font-size: 16px;
+            color: #c0c0c0;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .proyectos-img {
+            width: 100%;
+            height: 180px;
+            position: relative;
+            margin-top: 25px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        /* ===== CONTRAPORTADA ===== */
+        .contraportada {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            margin-top: 30px;
+        }
+        
+        .contacto-item {
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .contacto-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        
+        .contacto-label {
+            font-size: 12px;
+            color: #00d4ff;
+            margin-bottom: 5px;
+        }
+        
+        .contacto-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            border-radius: 20px;
+            padding: 35px;
+            margin-top: 30px;
+            width: 100%;
+        }
+        
+        .cta-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        
+        .cta-sub {
+            font-size: 16px;
+            color: #1a1a2e;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            color: #00d4ff;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .tecnico-img {
+            width: 100%;
+            max-width: 450px;
+            height: 200px;
+            position: relative;
+            margin: 25px 0;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        /* ===== DECORACIÓN ===== */
+        .deco-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1), transparent);
+        }
+        
+        .circle-1 {
+            width: 400px;
+            height: 400px;
+            top: -200px;
+            right: -200px;
+        }
+        
+        .circle-2 {
+            width: 300px;
+            height: 300px;
+            bottom: -150px;
+            left: -150px;
+        }
+        
+        /* ===== PRINT ===== */
+        @media print {
+            body { background: white; }
+            .page {
+                margin: 0;
+                page-break-after: always;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== PÁGINA 1: PORTADA ==================== -->
+    <div class="page portada">
+        <div class="deco-circle circle-1"></div>
+        <div class="deco-circle circle-2"></div>
+        
+        <div class="logo-container">
+            <div class="logo-electric">ELECTRIC</div>
+            <div class="logo-soluciones">SOLUCIONES</div>
+            <div class="logo-ab">A.B</div>
+        </div>
+        
+        <div class="rayo-icon">⚡</div>
+        
+        <div class="slogan">"Energía que impulsa tu crecimiento"</div>
+        
+        <!-- IMAGEN PORTADA -->
+        <div class="img-container portada-img">
+            <img src="imagenes/portada-edificio.jpg" alt="Edificio corporativo ELECTRIC">
+            <div class="img-logo-overlay">
+                <img src="imagenes/logo-electric.png" alt="Logo ELECTRIC">
+            </div>
+            <div class="img-overlay">
+                <span style="color: #00d4ff; font-weight: 700;">Instalaciones Eléctricas Profesionales</span>
+            </div>
+        </div>
+        
+        <div class="tagline">Para Empresas, Comercios y Urbanizaciones</div>
+    </div>
+
+    <!-- ==================== PÁGINA 2: QUIÉNES SOMOS ==================== -->
+    <div class="page">
+        <div class="deco-circle circle-1"></div>
+        
+        <h1 class="section-title">SOBRE NOSOTROS</h1>
+        
+        <p style="font-size: 15px; line-height: 1.7; color: #c0c0c0; margin-bottom: 20px;">
+            <span class="highlight">ELECTRIC Soluciones A.B</span> es una empresa especializada en soluciones eléctricas integrales para el sector empresarial, comercial y residencial.
+        </p>
+        
+        <div class="content-grid">
+            <!-- CARD 1 -->
+            <div class="card">
+                <div class="img-container card-img">
+                    <img src="imagenes/tecnico-trabajando.jpg" alt="Técnico certificado">
+                    <div class="img-logo-overlay" style="width: 50px; height: 50px; top: 10px; right: 10px;">
+                        <img src="imagenes/logo-electric.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-icon">👨‍🔧</div>
+                    <div class="card-title">Profesionales Certificados</div>
+                    <div class="card-text">
+                        Nuestro equipo cuenta con <span class="highlight">todos los certificados</span> y experiencia requerida.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CARD 2 -->
+            <div class="card">
+                <div class="img-container card-img">
+                    <img src="imagenes/certificacion-calidad.jpg" alt="Certificación de calidad">
+                    <div class="img-logo-overlay" style="width: 50px; height: 50px; top: 10px; right: 10px;">
+                        <img src="imagenes/logo-electric.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-icon">🏆</div>
+                    <div class="card-title">Calidad Garantizada</div>
+                    <div class="card-text">
+                        Las <span class="highlight">certificaciones</span> garantizan seguridad y eficiencia.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CARD 3 -->
+            <div class="card">
+                <div class="img-container card-img">
+                    <img src="imagenes/bodega-inventario.jpg" alt="Bodega mayorista">
+                    <div class="img-logo-overlay" style="width: 50px; height: 50px; top: 10px; right: 10px;">
+                        <img src="imagenes/logo-electric.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-icon">🏭</div>
+                    <div class="card-title">Precio Competitivo</div>
+                    <div class="card-text">
+                        <span class="highlight">Bodegas propias</span> con precios de mayorista.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CARD 4 -->
+            <div class="card">
+                <div class="img-container card-img">
+                    <img src="imagenes/proyecto-completado.jpg" alt="Proyecto completado">
+                    <div class="img-logo-overlay" style="width: 50px; height: 50px; top: 10px; right: 10px;">
+                        <img src="imagenes/logo-electric.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-icon">⚡</div>
+                    <div class="card-title">Proyectos a Medida</div>
+                    <div class="card-text">
+                        Desde pequeñas instalaciones hasta grandes proyectos industriales.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== PÁGINA 3: SERVICIOS ==================== -->
+    <div class="page">
+        <div class="deco-circle circle-2"></div>
+        
+        <h1 class="section-title">NUESTROS SERVICIOS</h1>
+        
+        <!-- SERVICIO 1 -->
+        <div class="servicio-box">
+            <div class="img-container servicio-img">
+                <img src="imagenes/servicio-comercial.jpg" alt="Instalaciones comerciales">
+                <div class="img-logo-overlay" style="width: 60px; height: 60px;">
+                    <img src="imagenes/logo-electric.png" alt="Logo">
+                </div>
+            </div>
+            <div class="servicio-content">
+                <div class="servicio-title">🏢 Instalaciones Eléctricas Comerciales</div>
+                <ul class="servicio-list">
+                    <li>Empresas y oficinas</li>
+                    <li>Comercios y retail</li>
+                    <li>Supermercados</li>
+                    <li>Centros comerciales</li>
+                    <li>Construcción nueva</li>
+                    <li>Construcción usada</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- SERVICIO 2 -->
+        <div class="servicio-box">
+            <div class="img-container servicio-img">
+                <img src="imagenes/servicio-residencial.jpg" alt="Instalaciones residenciales">
+                <div class="img-logo-overlay" style="width: 60px; height: 60px;">
+                    <img src="imagenes/logo-electric.png" alt="Logo">
+                </div>
+            </div>
+            <div class="servicio-content">
+                <div class="servicio-title">🏘️ Instalaciones Eléctricas Residenciales</div>
+                <ul class="servicio-list">
+                    <li>Urbanizaciones</li>
+                    <li>Edificios de apartamentos</li>
+                    <li>Casas y conjuntos</li>
+                    <li>Remodelaciones</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- SERVICIO 3 -->
+        <div class="servicio-box">
+            <div class="img-container servicio-img">
+                <img src="imagenes/servicio-industrial.jpg" alt="Automatización industrial">
+                <div class="img-logo-overlay" style="width: 60px; height: 60px;">
+                    <img src="imagenes/logo-electric.png" alt="Logo">
+                </div>
+            </div>
+            <div class="servicio-content">
+                <div class="servicio-title">🏭 Automatización Industrial</div>
+                <ul class="servicio-list">
+                    <li>Automatización de procesos</li>
+                    <li>IIoT - Industrial Internet</li>
+                    <li>Control y monitoreo</li>
+                    <li>Alta tensión</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== PÁGINA 4: TECNOLOGÍAS ==================== -->
+    <div class="page">
+        <div class="deco-circle circle-1"></div>
+        
+        <h1 class="section-title">TECNOLOGÍAS DE VANGUARDIA</h1>
+        
+        <div class="tech-grid">
+            <!-- DOMÓTICA -->
+            <div class="tech-card">
+                <div class="img-container tech-img">
+                    <img src="imagenes/domotica-casa.jpg" alt="Domótica">
+                    <div class="img-logo-overlay" style="width: 45px; height: 45px; top: 10px; right: 10px;">
+                        <img src="imagenes/logo-electric.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="tech-body">
+                    <div class="tech-icon">🏠</div>
+                    <div class="tech-title">DOMÓTICA</div>
+                    <div class="tech-desc">
+                        Control de iluminación, climatización, seguridad y entretenimiento desde tu smartphone.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- INMÓTICA -->
+            <div class="tech-card">
+                <div class="img-container tech-img">
+                    <img src="imagenes/inmotica-edificio.jpg" alt="Inmótica">
+                    <div class="img-logo-overlay" style="width: 45px; height: 45px; top: 10px; right: 10px;">
+                        <img src="imagenes/logo-electric.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="tech-body">
+                    <div class="tech-icon">🏢</div>
+                    <div class="tech-title">INMÓTICA</div>
+                    <div class="tech-desc">
+                        Gestión integrada de edificios: energía, seguridad, climatización y accesos.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- IoT -->
+            <div class="tech-card">
+                <div class="img-container tech-img">
+                    <img src="imagenes/iot-dispositivos.jpg" alt="IoT">
+                    <div class="img-logo-overlay" style="width: 45px; height: 45px; top: 10px; right: 10px;">
+                        <img src="imagenes/logo-electric.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="tech-body">
+                    <div class="tech-icon">📡</div>
+                    <div class="tech-title">IoT / IIoT</div>
+                    <div class="tech-desc">
+                        Interconexión inteligente de dispositivos para hogar e industria.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ENERGÍA SOLAR -->
+            <div class="tech-card">
+                <div class="img-container tech-img">
+                    <img src="imagenes/energia-solar.jpg" alt="Energía solar">
+                    <div class="img-logo-overlay" style="width: 45px; height: 45px; top: 10px; right: 10px;">
+                        <img src="imagenes/logo-electric.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="tech-body">
+                    <div class="tech-icon">☀️</div>
+                    <div class="tech-title">ENERGÍA SOLAR</div>
+                    <div class="tech-desc">
+                        Sistemas de energía solar para reducir costos y cuidar el medio ambiente.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== PÁGINA 5: CLIENTES ==================== -->
+    <div class="page">
+        <div class="deco-circle circle-2"></div>
+        
+        <h1 class="section-title">CONFÍAN EN NOSOTROS</h1>
+        
+        <p style="text-align: center; color: #c0c0c0; margin-bottom: 20px; font-size: 14px;">
+            Empresas líderes que han elegido <span class="highlight">ELECTRIC Soluciones A.B</span>:
+        </p>
+        
+        <div class="clientes-grid">
+            <div class="cliente-box">
+                <div class="cliente-logo">
+                    <img src="imagenes/cliente-nacional-chocolates.png" alt="Nacional de Chocolates">
+                </div>
+                <div class="cliente-name">NACIONAL DE<br>CHOCOLATES</div>
+            </div>
+            
+            <div class="cliente-box">
+                <div class="cliente-logo">
+                    <img src="imagenes/cliente-noel.png" alt="Noel">
+                </div>
+                <div class="cliente-name">NOEL</div>
+            </div>
+            
+            <div class="cliente-box">
+                <div class="cliente-logo">
+                    <img src="imagenes/cliente-nutresa.png" alt="Nutresa">
+                </div>
+                <div class="cliente-name">NUTRESA</div>
+            </div>
+            
+            <div class="cliente-box">
+                <div class="cliente-logo">
+                    <img src="imagenes/cliente-d1.png" alt="D1">
+                </div>
+                <div class="cliente-name">SUPERMERCADOS<br>D1</div>
+            </div>
+            
+            <div class="cliente-box">
+                <div class="cliente-logo">
+                    <img src="imagenes/cliente-euro.png" alt="Euro">
+                </div>
+                <div class="cliente-name">SUPERMERCADO<br>EURO</div>
+            </div>
+            
+            <div class="cliente-box">
+                <div class="cliente-logo">
+                    <img src="imagenes/cliente-amarili.png" alt="Amarili">
+                </div>
+                <div class="cliente-name">URBANIZACIÓN<br>AMARILI<br>MEDELLÍN</div>
+            </div>
+        </div>
+        
+        <!-- IMAGEN PROYECTOS -->
+        <div class="img-container proyectos-img">
+            <img src="imagenes/collage-proyectos.jpg" alt="Proyectos realizados">
+            <div class="img-logo-overlay" style="width: 70px; height: 70px;">
+                <img src="imagenes/logo-electric.png" alt="Logo ELECTRIC">
+            </div>
+        </div>
+        
+        <div class="testimonial">
+            "La calidad de nuestras instalaciones nos ha convertido en aliados estratégicos de las empresas más importantes del país"
+        </div>
+    </div>
+
+    <!-- ==================== PÁGINA 6: CONTRAPORTADA ==================== -->
+    <div class="page contraportada">
+        <div class="deco-circle circle-1"></div>
+        <div class="deco-circle circle-2"></div>
+        
+        <div class="logo-container">
+            <div class="logo-electric" style="font-size: 48px;">ELECTRIC</div>
+            <div class="logo-soluciones" style="font-size: 20px;">SOLUCIONES A.B</div>
+        </div>
+        
+        <div class="rayo-icon" style="font-size: 50px;">⚡</div>
+        
+        <!-- IMAGEN TÉCNICO -->
+        <div class="img-container tecnico-img">
+            <img src="imagenes/tecnico-profesional.jpg" alt="Técnico profesional ELECTRIC">
+            <div class="img-logo-overlay" style="width: 70px; height: 70px;">
+                <img src="imagenes/logo-electric.png" alt="Logo ELECTRIC">
+            </div>
+        </div>
+        
+        <div class="contacto-grid">
+            <div class="contacto-item">
+                <div class="contacto-icon">📞</div>
+                <div class="contacto-label">TELÉFONO</div>
+                <div class="contacto-value">+57 300 123 4567</div>
+            </div>
+            
+            <div class="contacto-item">
+                <div class="contacto-icon">📧</div>
+                <div class="contacto-label">EMAIL</div>
+                <div class="contacto-value">info@electricsoluciones.com</div>
+            </div>
+            
+            <div class="contacto-item">
+                <div class="contacto-icon">🌐</div>
+                <div class="contacto-label">WEB</div>
+                <div class="contacto-value">www.electricsoluciones.com</div>
+            </div>
+            
+            <div class="contacto-item">
+                <div class="contacto-icon">📍</div>
+                <div class="contacto-label">DIRECCIÓN</div>
+                <div class="contacto-value">Medellín, Colombia</div>
+            </div>
+        </div>
+        
+        <div class="cta-box">
+            <div class="cta-text">"SU PROYECTO, GRANDE O PEQUEÑO,<br>MERECE LA MEJOR ENERGÍA"</div>
+            <div class="cta-sub">¡CONTÁCTENOS HOY!</div>
+        </div>
+        
+        <div class="footer-badges">
+            <div class="badge">✓ Certificados</div>
+            <div class="badge">✓ Calidad</div>
+            <div class="badge">✓ Experiencia</div>
+            <div class="badge">✓ Competitividad</div>
+        </div>
+    </div>
+
+</body>
+</html>
